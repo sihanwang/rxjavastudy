@@ -32,6 +32,8 @@ public class HelloWorld {
 	}
 	
 	
+	
+	//如果传递给just方法一个ArrayList对象，它不会读取对象内部list中的元素，而是将ArrayList整个发送。
 	public static void hellojust(String... names) {
 		
 		System.out.println("hello function started:"+Thread.currentThread().getName());
