@@ -51,7 +51,7 @@ public class FlatMapWithErrorAndComplete {
 	}
 
 	public static Observable<String> CreateComplete() {
-		return Observable.just("Complete");
+		return Observable.just("Complete"); //just方法在发出event后会在最后发出一个complete信号。
 	}
 
 }
