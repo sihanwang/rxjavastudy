@@ -1,4 +1,4 @@
-package rxjava.study.operator.merge;
+package rxjava.study.operator4twoobservables.merge;
 
 import rx.Observable;
 

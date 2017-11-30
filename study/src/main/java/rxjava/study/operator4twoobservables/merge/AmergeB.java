@@ -1,4 +1,4 @@
-package rxjava.study.single.merge;
+package rxjava.study.operator4twoobservables.merge;
 
 import rx.Observable;
 import rx.Single;
@@ -6,11 +6,17 @@ import rx.schedulers.Schedulers;
 
 public class AmergeB {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)  throws Exception{
 		// TODO Auto-generated method stub
+		
+		getDataA().subscribe(System.out::println);
+		getDataB().subscribe(System.out::println);
+		
 		Observable<String> a_merge_b = getDataA().mergeWith(getDataB());
 		
 		a_merge_b.subscribe(s -> {System.out.println(s);});
+		
+		Thread.sleep(5000);
 		
 	}
 

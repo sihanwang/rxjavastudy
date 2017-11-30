@@ -1,4 +1,4 @@
-package rxjava.study.operator.zip;
+package rxjava.study.operator4twoobservables.zip;
 
 import rx.Observable;
 
@@ -12,7 +12,7 @@ public class zip {
 			
 		Observable<Person> Persons=names.zipWith(ages, (a,b) -> new zip().new Person(a,b));
 		
-		Persons.subscribe( a -> System.out.println(a.toString()));
+		Persons.subscribe( System.out::println);
 		
 	}
 	
