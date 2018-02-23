@@ -9,14 +9,16 @@ public class NoRefCountExample {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Observable<String> observable = Observable.create(subscriber -> {
-			System.out.println("Establishing connection");
+		Observable<String> observable = Observable.create(
+				subscriber -> {
+					System.out.println("Establishing connection");
 
-			subscriber.add(Subscriptions.create(() -> {
-				System.out.println("Disconnecting connection");
-			}));
-			System.out.println("Established connection");
-		});
+					subscriber.add(Subscriptions.create(() -> {
+						System.out.println("Disconnecting connection");
+					}));
+					System.out.println("Established connection");
+				}
+				);
 
 		Subscription sub1 = observable.subscribe();
 		System.out.println("Subscribed 1");

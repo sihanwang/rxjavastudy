@@ -8,15 +8,17 @@ public class WithRefCountExample {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Observable<String> observable = Observable.create(subscriber -> {
-			System.out.println("Establishing connection");
+		Observable<String> observable = Observable.create(
+				subscriber -> {
+					System.out.println("Establishing connection");
 
-			subscriber.add(Subscriptions.create(() -> {
-				System.out.println("Disconnecting connection");
-			}));
-			System.out.println("Established connection");
-		});
-		
+					subscriber.add(Subscriptions.create(() -> {
+						System.out.println("Disconnecting connection");
+					}));
+					System.out.println("Established connection");
+				}
+				);
+
 		Observable<String> lazy=observable.publish().refCount();
 
 		//Observable 只会被初始化一次
@@ -28,7 +30,7 @@ public class WithRefCountExample {
 		System.out.println("Unsubscribed 1");
 		sub2.unsubscribe();
 		System.out.println("Unsubscribed 2");
-		
+
 	}
 
 }
